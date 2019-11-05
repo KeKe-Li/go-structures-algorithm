@@ -1,6 +1,6 @@
 package _001_TwoSum
 
-func TwoSum(nums []int, target int) []int {
+func twoSum(nums []int, target int) []int {
 	m := make(map[int]int)
 	for i,v := range nums{
 		// 通过查询map，获取a = target - v的序列号
