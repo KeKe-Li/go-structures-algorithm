@@ -48,7 +48,7 @@ a = target - b
 
 #### 测试用例
 
-testing的测测试用例有四种形式：
+testing的测试用例有四种形式：
  
 * TestXxxx(t testing.T) 基本测试用例
 
