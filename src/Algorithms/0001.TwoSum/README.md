@@ -48,7 +48,7 @@ a = target - b
 
 #### 测试用例
 
-testing的测试用例有四种形式：
+Test的测试用例有四种形式：
  
 * TestXxxx(t testing.T) 基本测试用例
 
@@ -108,7 +108,7 @@ func TestMain(m *testing.M)
 
 
 
-#### testing的变量
+#### Test的变量
 
 gotest的变量有这些：
 
@@ -125,7 +125,7 @@ gotest的变量有这些：
 * test.cpu : 指定cpu数量
 * test.parallel : 指定运行测试用例的并行数
 
-#### testing包内的结构
+#### Test包内的结构
 
 * B : 压力测试
 * BenchmarkResult : 压力测试结果
@@ -139,7 +139,7 @@ gotest的变量有这些：
 * T : 普通测试用例
 * TB : 测试用例的接口
 
-#### testing的通用方法
+#### Test的通用方法
 
 T结构内部是继承自common结构，common结构提供集中方法，是我们经常会用到的：
 
