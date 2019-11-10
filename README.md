@@ -58,6 +58,19 @@ Go 数据结构和算法,在leetcode上的一些题目的解答.
 
 显然，链式存储就灵活多了，数据存在哪里不重要，只要有一个指针存放了相应的地址就能找到白了 。
 
+数据结构类型:
+
+* [Augmented Tree]()
+* [Bitarray]()
+* [Queue]()
+* [Fibonacci Heap]()
+* [Range Tree]()
+* [AVL Tree]()
+* [hashmap]()
+* [Skiplist]()
+* [B+ Tree]()
+* [Immutable B Tree]()
+
 #### Algorithms 
 
 | #    |  Title                                                       |  Solution                                                                                                                                           |  Acceptance |  Difficulty |  Frequency |
