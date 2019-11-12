@@ -60,7 +60,7 @@ Go 数据结构和算法,在leetcode上的一些题目的解答.
 
 数据结构类型:
 
-* [Augmented Tree]()
+* [Augmented Tree](https://github.com/KeKe-Li/go-structures-algorithm/blob/master/src/structures/augmentedtree/atree.go)
 * [Bitarray]()
 * [Queue]()
 * [Fibonacci Heap]()
