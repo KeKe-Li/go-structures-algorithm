@@ -62,7 +62,7 @@ Go 数据结构和算法,在leetcode上的一些题目的解答.
 
 * [Augmented Tree](https://github.com/KeKe-Li/go-structures-algorithm/blob/master/src/structures/augmentedtree/atree.go)
 * [Bitarray](https://github.com/KeKe-Li/go-structures-algorithm/blob/feature-keke/src/structures/bitarray/bitarray.go)
-* [Queue]()
+* [Queue](https://github.com/KeKe-Li/go-structures-algorithm/blob/feature-keke/src/structures/queue/queue.go)
 * [Fibonacci Heap]()
 * [Range Tree]()
 * [AVL Tree]()
