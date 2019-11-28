@@ -7,9 +7,7 @@
 <a href="https://golang.google.cn"><img src="https://img.shields.io/badge/Go-1.13-blue.svg"></a>
 </p>
 
-
 Go 数据结构和算法,在leetcode上的一些题目的解答.
-
 
 #### Data Structures
 
