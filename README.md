@@ -64,11 +64,10 @@ Go 数据结构和算法,在leetcode上的一些题目的解答.
 * [Fibonacci Heap](https://github.com/KeKe-Li/go-structures-algorithm/blob/feature-keke/src/structures/fibheap/fibheap.go)
 * [Range Tree](https://github.com/KeKe-Li/go-structures-algorithm/blob/feature-keke/src/structures/rangetree/interface.go)
 * [AVL Tree]()
-* [hashmap]()
+* [hashmap](https://github.com/KeKe-Li/go-structures-algorithm/blob/feature-keke/src/structures/hashmap/fastinteger/hashmap.go)
 * [Skiplist]()
 * [B+ Tree]()
 * [Immutable B Tree]()
-* [Skiplist]()
 
 
 * 跳跃表 (Skiplist)
