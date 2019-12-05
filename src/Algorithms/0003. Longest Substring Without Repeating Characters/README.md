@@ -31,7 +31,7 @@ Explanation: The answer is "wke", with the length of 3.
              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 ```
 
-## 题目大意
+题意:
 
 在一个字符串重寻找没有重复字母的最长子串。
 
