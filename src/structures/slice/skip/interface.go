@@ -16,7 +16,7 @@ limitations under the License.
 
 package skip
 
-import "github.com/Workiva/go-datastructures/common"
+import "github.com/KeKe-Li/go-structures-algorithm/common"
 
 // Iterator defines an interface that allows a consumer to iterate
 // all results of a query.  All values will be visited in-order.
