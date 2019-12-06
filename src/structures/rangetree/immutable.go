@@ -16,7 +16,7 @@ limitations under the License.
 
 package rangetree
 
-import "github.com/Workiva/go-datastructures/slice"
+import "go-structures-algorithm/src/structures/slice"
 
 type immutableRangeTree struct {
 	number     uint64

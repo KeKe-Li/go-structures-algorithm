@@ -16,7 +16,7 @@ limitations under the License.
 
 package skip
 
-import "github.com/KeKe-Li/go-structures-algorithm/common"
+import "go-structures-algorithm/src/structures/common"
 
 const iteratorExhausted = -2
 

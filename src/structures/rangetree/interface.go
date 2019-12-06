@@ -24,7 +24,6 @@ and another that is immutable copy-on-write which is threadsafe.  The mutable
 version is obviously faster but will likely have write contention for any
 consumer that needs a threadsafe rangetree.
 
-TODO: unify both implementations with the same interface.
 */
 package rangetree
 
