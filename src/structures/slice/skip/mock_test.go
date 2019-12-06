@@ -19,7 +19,7 @@ package skip
 import (
 	"github.com/stretchr/testify/mock"
 
-	"github.com/KeKe-Li/go-structures-algorithm/common"
+	"go-structures-algorithm/src/structures/common"
 )
 
 type mockEntry uint64

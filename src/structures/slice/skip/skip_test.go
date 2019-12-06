@@ -22,7 +22,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/KeKe-Li/go-structures-algorithm/common"
+	"go-structures-algorithm/src/structures/common"
 )
 
 func generateMockEntries(num int) common.Comparators {
