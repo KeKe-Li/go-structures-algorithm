@@ -1,6 +1,5 @@
 package _003__Longest_Substring_Without_Repeating_Characters
 
-
 func lengthOfLongestSubstring(s string) int {
 	// location[s[i]] == j 表示：
 	// s中第i个字符串，上次出现在s的j位置，所以，在s[j+1:i]中没有s[i]
