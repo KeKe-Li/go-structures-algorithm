@@ -20,14 +20,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Workiva/go-datastructures/futures"
+	"go-structures-algorithm/src/structures/futures"
 )
 
 // cacher provides a convenient construct for retrieving,
 // storing, and caching nodes; basically wrapper persister with a caching layer.
 // This ensures that we don't have to constantly
 // run to the persister to fetch nodes we are using over and over again.
-// TODO: this should probably evict items from the cache if the cache gets
 // too full.
 type cacher struct {
 	lock      sync.Mutex
