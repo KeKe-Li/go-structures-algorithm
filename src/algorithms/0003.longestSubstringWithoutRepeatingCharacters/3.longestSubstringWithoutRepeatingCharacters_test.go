@@ -1,4 +1,4 @@
-package _003__Longest_Substring_Without_Repeating_Characters
+package _003_longestSubstringWithoutRepeatingCharacters
 
 import (
 	"testing"

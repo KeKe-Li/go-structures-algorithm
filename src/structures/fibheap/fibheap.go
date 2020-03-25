@@ -54,7 +54,7 @@ and this array is populated.  Whenever a conflict is discovered, the
 appropriate trees are merged together until no more conflicts exist.  The
 resulting trees are then put into the root list.  A clever analysis using
 the potential method can be used to show that the amortized cost of this
-operation is O(lg n), see "Introduction to Algorithms, Second Edition" by
+operation is O(lg n), see "Introduction to algorithms, Second Edition" by
 Cormen, Rivest, Leiserson, and Stein for more details.
 
 The other hard operation is decreaseKey, which works as follows.  First, we
