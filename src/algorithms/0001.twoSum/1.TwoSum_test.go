@@ -1,4 +1,4 @@
-package _001_TwoSum
+package _001_twoSum
 
 import (
 	"testing"
