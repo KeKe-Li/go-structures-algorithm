@@ -1,5 +1,8 @@
 package lru
 
+import "container/list"
+
+
 // LruCache 基于内存实现、不带过期时间
 // 原理：map结构按照kv存储数据，双向链表保存数据新鲜度
 // 扩展：支持过期时间可以增加一个双向链表按过期时间存储，
@@ -91,3 +94,53 @@ func (c *LRUCache) Put(key int, value int) {
 	c.store[key] = &node
 	c.length++
 }
+
+
+// 另外一种直接使用container/list 包
+
+type LRUCache struct {
+	Cap  int
+	Keys map[int]*list.Element
+	List *list.List
+}
+
+type pair struct {
+	K,V int
+}
+
+func Constructor(capacity int) LRUCache{
+	return LRUCache{
+		Cap: capacity,
+		Keys: make(map[int]*list.Element),
+		List: list.New(),
+	}
+}
+
+func (impl *LRUCache) Get(key int) int{
+	if el,ok := impl.Keys[key];ok{
+		impl.List.MoveToFront(el)
+		return el.Value.(pair).V
+	}
+	return -1
+}
+
+func (impl *LRUCache) Put(key int,value int){
+	if el,ok := impl.Keys[key];ok{
+		el.Value = pair{K:key,V: value}
+		impl.List.MoveToFront(el)
+	}else{
+		el := impl.List.PushFront(pair{K: key,V: value})
+		impl.Keys[key] = el
+	}
+	if impl.List.Len() > impl.Cap{
+		el := impl.List.Back()
+		impl.List.Remove(el)
+		delete(impl.Keys,el.Value.(pair).K)
+	}
+}
+
+
+
+
+
+
