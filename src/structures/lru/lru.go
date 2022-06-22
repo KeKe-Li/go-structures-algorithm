@@ -97,7 +97,6 @@ func (c *LRUCache) Put(key int, value int) {
 
 
 // 另外一种直接使用container/list 包
-
 type LRUCache struct {
 	Cap  int
 	Keys map[int]*list.Element
@@ -138,9 +137,3 @@ func (impl *LRUCache) Put(key int,value int){
 		delete(impl.Keys,el.Value.(pair).K)
 	}
 }
-
-
-
-
-
-
