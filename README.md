@@ -7,7 +7,7 @@
 <a href="https://golang.google.cn"><img src="https://img.shields.io/badge/Go-1.13-blue.svg"></a>
 </p>
 
-Go 的数据结构和算法,已经一些在leetcode上的一些题目的解答集合.
+Go 的数据结构和算法 , 以及一些在leetcode上的一些题目的解答集合.
 
 #### Data Structures
 
