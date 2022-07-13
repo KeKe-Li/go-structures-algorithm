@@ -36,13 +36,13 @@ is disposed.  This could serve as a signal to kill a goroutine.  All threadsafet
 is acheived using CAS operations, making this buffer pretty quick.
 
 Benchmarks:
-BenchmarkPriorityQueue-8	 		2000000	       782 ns/op
-BenchmarkQueue-8	 		 		2000000	       671 ns/op
-BenchmarkChannel-8	 		 		1000000	      2083 ns/op
-BenchmarkQueuePut-8	   		   		20000	     84299 ns/op
-BenchmarkQueueGet-8	   		   		20000	     80753 ns/op
-BenchmarkExecuteInParallel-8	    20000	     68891 ns/op
-BenchmarkRBLifeCycle-8				10000000	       177 ns/op
+BenchmarkPriorityQueue-8	 			2000000	               782 ns/op
+BenchmarkQueue-8	 		 		2000000	                671 ns/op
+BenchmarkChannel-8	 		 		1000000	                2083 ns/op
+BenchmarkQueuePut-8	   		   		20000	                84299 ns/op
+BenchmarkQueueGet-8	   		   		20000	                80753 ns/op
+BenchmarkExecuteInParallel-8	    			20000	     		68891 ns/op
+BenchmarkRBLifeCycle-8					10000000	        177 ns/op
 BenchmarkRBPut-8					30000000	        58.1 ns/op
 BenchmarkRBGet-8					50000000	        26.8 ns/op
 
