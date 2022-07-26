@@ -95,7 +95,7 @@ func (c *LRUCache) Put(key int, value int) {
 }
 
 
-// 另外一种直接使用container/list 包
+// 第二种直接使用container/list 包
 type LRUCache struct {
 	Cap  int
 	Keys map[int]*list.Element
@@ -136,3 +136,110 @@ func (impl *LRUCache) Put(key int,value int){
 		delete(impl.Keys,el.Value.(pair).K)
 	}
 }
+
+
+// 第三种直接实现
+type LRUCache struct {
+	head,tail *Node
+	Keys map[int]*Node
+	capacity int
+}
+
+type Node struct {
+	Prev,Next *Node
+	Key,Val int
+}
+
+func Constructor(capacity int) LRUCache{
+	return LRUCache{
+		Keys: make(map[int]*Node),
+		capacity: capacity,
+	}
+}
+
+
+func (impl *LRUCache) Get(key int) int{
+	if node,ok := impl.Keys[key];ok {
+		impl.Remove(node)
+		impl.Add(node)
+		return node.Val
+	}
+	return -1
+}
+
+func (impl *LRUCache) Put(key,value int){
+	if node,ok := impl.Keys[key];ok{
+		node.Val = value
+		impl.Remove(node)
+		impl.Add(node)
+	}else{
+		node = &Node{
+			Key:key,
+			Val: value,
+		}
+		impl.Keys[key] = node
+		impl.Add(node)
+	}
+	if len(impl.Keys) > impl.capacity{
+		delete(impl.Keys,impl.tail.Key)
+		impl.Remove(impl.tail)
+	}
+	return
+}
+
+func (impl *LRUCache) Adds1(node *Node){
+	if impl.head !=nil {
+		impl.head.Prev = node
+		node.Next = impl.head
+	}
+	 impl.head= node
+	 if impl.tail == nil {
+	 	impl.tail = node
+	 	impl.tail.Prev = node
+	 	impl.tail.Next = nil
+	 }
+}
+
+func (impl *LRUCache)Adds(node *Node){
+	if impl.head != nil{
+		impl.head.Prev = node
+		node.Next = impl.head
+	}
+	impl.head  = node
+	if impl.tail == nil {
+		impl.tail =node
+		impl.tail.Prev = node
+		impl.tail.Next = nil
+	}
+}
+
+func (impl *LRUCache) Add(node *Node){
+	if impl.head !=nil {
+		impl.head.Prev = node
+		node.Next = impl.head
+	}
+	impl.head = node
+	if impl.tail == nil {
+		impl.tail = node
+		impl.tail.Prev = node
+		impl.tail.Next = nil
+	}
+	return
+}
+
+func (impl *LRUCache)Remove(node *Node){
+	if impl.head == node {
+		if node.Next != nil {
+			node.Next.Prev = nil
+		}
+		impl.head= node.Next
+		return
+	}
+	if impl.tail == node {
+		impl.tail = impl.tail.Prev
+		return
+	}
+	node.Next.Prev = node.Prev
+	node.Prev.Next = node.Next
+}
+
