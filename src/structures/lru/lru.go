@@ -6,6 +6,7 @@ import "container/list"
 // LruCache 基于内存实现、不带过期时间
 // 原理：map结构按照kv存储数据，双向链表保存数据新鲜度
 // 扩展：支持过期时间可以增加一个双向链表按过期时间存储，
+
 // LRUChainNode 链表节点
 type LRUChainNode struct {
 	pre   *LRUChainNode
@@ -138,7 +139,7 @@ func (impl *LRUCache) Put(key int,value int){
 }
 
 
-// 第三种直接实现
+// 第三种LRU直接实现
 type LRUCache struct {
 	head,tail *Node
 	Keys map[int]*Node
@@ -187,31 +188,6 @@ func (impl *LRUCache) Put(key,value int){
 	return
 }
 
-func (impl *LRUCache) Adds1(node *Node){
-	if impl.head !=nil {
-		impl.head.Prev = node
-		node.Next = impl.head
-	}
-	 impl.head= node
-	 if impl.tail == nil {
-	 	impl.tail = node
-	 	impl.tail.Prev = node
-	 	impl.tail.Next = nil
-	 }
-}
-
-func (impl *LRUCache)Adds(node *Node){
-	if impl.head != nil{
-		impl.head.Prev = node
-		node.Next = impl.head
-	}
-	impl.head  = node
-	if impl.tail == nil {
-		impl.tail =node
-		impl.tail.Prev = node
-		impl.tail.Next = nil
-	}
-}
 
 func (impl *LRUCache) Add(node *Node){
 	if impl.head !=nil {
