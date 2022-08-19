@@ -49,6 +49,7 @@ BenchmarkRBGet-8					50000000	        26.8 ns/op
 TODO: We really need a Fibonacci heap for the priority queue.
 TODO: Unify the types of queue to the same interface.
 */
+
 package queue
 
 import (
