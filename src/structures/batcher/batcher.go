@@ -95,6 +95,7 @@ type basicBatcher struct {
 //   - Maximum number of bytes per batch
 //   - Maximum number of items per batch
 //   - Maximum amount of time waiting for a batch
+//
 // Values of zero for one of these fields indicate they should not be
 // taken into account when evaluating the readiness of a batch.
 // This provides an ordering guarantee for any given thread such that if a
