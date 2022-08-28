@@ -2,7 +2,6 @@ package lru
 
 import "container/list"
 
-
 // LruCache 基于内存实现、不带过期时间
 // 原理：map结构按照kv存储数据，双向链表保存数据新鲜度
 // 扩展：支持过期时间可以增加一个双向链表按过期时间存储，
@@ -95,8 +94,7 @@ func (c *LRUCache) Put(key int, value int) {
 	c.length++
 }
 
-
-// 第二种直接使用container/list 包
+// 第二种直接使用container/list
 type LRUCache struct {
 	Cap  int
 	Keys map[int]*list.Element
@@ -104,63 +102,61 @@ type LRUCache struct {
 }
 
 type pair struct {
-	K,V int
+	K, V int
 }
 
-func Constructor(capacity int) LRUCache{
+func Constructor(capacity int) LRUCache {
 	return LRUCache{
-		Cap: capacity,
+		Cap:  capacity,
 		Keys: make(map[int]*list.Element),
 		List: list.New(),
 	}
 }
 
-func (impl *LRUCache) Get(key int) int{
-	if el,ok := impl.Keys[key];ok{
+func (impl *LRUCache) Get(key int) int {
+	if el, ok := impl.Keys[key]; ok {
 		impl.List.MoveToFront(el)
 		return el.Value.(pair).V
 	}
 	return -1
 }
 
-func (impl *LRUCache) Put(key int,value int){
-	if el,ok := impl.Keys[key];ok{
-		el.Value = pair{K:key,V: value}
+func (impl *LRUCache) Put(key int, value int) {
+	if el, ok := impl.Keys[key]; ok {
+		el.Value = pair{K: key, V: value}
 		impl.List.MoveToFront(el)
-	}else{
-		el := impl.List.PushFront(pair{K: key,V: value})
+	} else {
+		el := impl.List.PushFront(pair{K: key, V: value})
 		impl.Keys[key] = el
 	}
-	if impl.List.Len() > impl.Cap{
+	if impl.List.Len() > impl.Cap {
 		el := impl.List.Back()
 		impl.List.Remove(el)
-		delete(impl.Keys,el.Value.(pair).K)
+		delete(impl.Keys, el.Value.(pair).K)
 	}
 }
-
 
 // 第三种LRU直接实现
 type LRUCache struct {
-	head,tail *Node
-	Keys map[int]*Node
-	capacity int
+	head, tail *Node
+	Keys       map[int]*Node
+	capacity   int
 }
 
 type Node struct {
-	Prev,Next *Node
-	Key,Val int
+	Prev, Next *Node
+	Key, Val   int
 }
 
-func Constructor(capacity int) LRUCache{
+func Constructor(capacity int) LRUCache {
 	return LRUCache{
-		Keys: make(map[int]*Node),
+		Keys:     make(map[int]*Node),
 		capacity: capacity,
 	}
 }
 
-
-func (impl *LRUCache) Get(key int) int{
-	if node,ok := impl.Keys[key];ok {
+func (impl *LRUCache) Get(key int) int {
+	if node, ok := impl.Keys[key]; ok {
 		impl.Remove(node)
 		impl.Add(node)
 		return node.Val
@@ -168,29 +164,28 @@ func (impl *LRUCache) Get(key int) int{
 	return -1
 }
 
-func (impl *LRUCache) Put(key,value int){
-	if node,ok := impl.Keys[key];ok{
+func (impl *LRUCache) Put(key, value int) {
+	if node, ok := impl.Keys[key]; ok {
 		node.Val = value
 		impl.Remove(node)
 		impl.Add(node)
-	}else{
+	} else {
 		node = &Node{
-			Key:key,
+			Key: key,
 			Val: value,
 		}
 		impl.Keys[key] = node
 		impl.Add(node)
 	}
-	if len(impl.Keys) > impl.capacity{
-		delete(impl.Keys,impl.tail.Key)
+	if len(impl.Keys) > impl.capacity {
+		delete(impl.Keys, impl.tail.Key)
 		impl.Remove(impl.tail)
 	}
 	return
 }
 
-
-func (impl *LRUCache) Add(node *Node){
-	if impl.head !=nil {
+func (impl *LRUCache) Add(node *Node) {
+	if impl.head != nil {
 		impl.head.Prev = node
 		node.Next = impl.head
 	}
@@ -203,12 +198,12 @@ func (impl *LRUCache) Add(node *Node){
 	return
 }
 
-func (impl *LRUCache)Remove(node *Node){
+func (impl *LRUCache) Remove(node *Node) {
 	if impl.head == node {
 		if node.Next != nil {
 			node.Next.Prev = nil
 		}
-		impl.head= node.Next
+		impl.head = node.Next
 		return
 	}
 	if impl.tail == node {
@@ -218,4 +213,3 @@ func (impl *LRUCache)Remove(node *Node){
 	node.Next.Prev = node.Prev
 	node.Prev.Next = node.Next
 }
-
