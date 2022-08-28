@@ -18,3 +18,5 @@ require (
 	go.uber.org/zap v1.15.0 // indirect
 	google.golang.org/grpc v1.23.0
 )
+
+replace github.com/coreos/bbolt v0.0.0-00010101000000-000000000000 => go.etcd.io/bbolt v1.3.5
