@@ -6,8 +6,6 @@ import (
 	"sync/atomic"
 )
 
-
-
 func main() {
 	var counter int32
 	var wg sync.WaitGroup

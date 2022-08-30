@@ -1,4 +1,4 @@
-package lru
+package lru1
 
 import (
 	"fmt"

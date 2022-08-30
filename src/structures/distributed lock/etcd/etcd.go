@@ -1,13 +1,16 @@
 package main
+
 import (
 	"context"
 	"flag"
 	"fmt"
 	"log"
 	"time"
+
 	"github.com/coreos/etcd/clientv3"
 	"go.etcd.io/etcd/clientv3/concurrency"
 )
+
 func main() {
 	var name = flag.String("name", "", "give a name")
 	flag.Parse()
@@ -18,7 +21,7 @@ func main() {
 	}
 	defer cli.Close()
 	// create a sessions to aqcuire a lock
-	s, _:= concurrency.NewSession(cli)
+	s, _ := concurrency.NewSession(cli)
 	defer s.Close()
 	l := concurrency.NewMutex(s, "/distributed-lock/")
 	ctx := context.Background()

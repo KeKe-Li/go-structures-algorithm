@@ -146,7 +146,6 @@ func (c *cache) Remove(keys ...string) {
 func (c *cache) Size() uint64 {
 	c.Lock()
 	defer c.Unlock()
-
 	return c.size
 }
 
