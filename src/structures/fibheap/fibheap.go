@@ -19,7 +19,8 @@ Binomial heaps: http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectur
 Fibonacci heaps: http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectures/09/Slides09.pdf
 */
 
-/*Package fibheap is an implementation of a priority queue backed by a Fibonacci heap,
+/*
+Package fibheap is an implementation of a priority queue backed by a Fibonacci heap,
 as described by Fredman and Tarjan.  Fibonacci heaps are interesting
 theoretically because they have asymptotically good runtime guarantees
 for many operations.  In particular, insert, peek, and decrease-key all

@@ -41,7 +41,6 @@ BenchmarkDelete-8	  					  500000	      2421 ns/op
 BenchmarkBulkDelete-8	     				 500	   2790461 ns/op
 BenchmarkFindQuery-8	 				 1000000	      1166 ns/op
 BenchmarkExecuteQuery-8	   				   10000	   1290732 ns/op
-
 */
 package palm
 

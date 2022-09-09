@@ -6,15 +6,15 @@
 // grow in size.
 //
 // Current benchmarks on identical machine against native Go implementation:
-// 		BenchmarkInsert-8	   10000	    131258 ns/op
-//		BenchmarkGoMapInsert-8	   10000	    208787 ns/op
-//		BenchmarkExists-8	  100000	     15820 ns/op
-//		BenchmarkGoMapExists-8	  100000	     16394 ns/op
-//		BenchmarkDelete-8	  100000	     17909 ns/op
-//		BenchmarkGoDelete-8	   30000	     49376 ns/op
-// 		BenchmarkInsertWithExpand-8	   20000	     90301 ns/op
-//		BenchmarkGoInsertWithExpand-8	   10000	    142088 ns/op
 //
+//	BenchmarkInsert-8	   10000	    131258 ns/op
+//	BenchmarkGoMapInsert-8	   10000	    208787 ns/op
+//	BenchmarkExists-8	  100000	     15820 ns/op
+//	BenchmarkGoMapExists-8	  100000	     16394 ns/op
+//	BenchmarkDelete-8	  100000	     17909 ns/op
+//	BenchmarkGoDelete-8	   30000	     49376 ns/op
+//	BenchmarkInsertWithExpand-8	   20000	     90301 ns/op
+//	BenchmarkGoInsertWithExpand-8	   10000	    142088 ns/op
 //
 // This performance could be further enhanced by using a
 // better probing technique.
