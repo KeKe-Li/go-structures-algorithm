@@ -384,7 +384,6 @@ func cutNode(heap *FloatingFibonacciHeap, node *Entry) {
 	}
 
 	node.parent.degree--
-
 	node.prev = node
 	node.next = node
 	heap.min = mergeLists(heap.min, node)
