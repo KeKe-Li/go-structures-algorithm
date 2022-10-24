@@ -77,6 +77,7 @@ type PersistentList interface {
 
 type emptyList struct{}
 
+
 // Head returns the head of the list. The bool will be false if the list is
 // empty.
 func (e *emptyList) Head() (interface{}, bool) {
