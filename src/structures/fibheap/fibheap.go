@@ -75,10 +75,6 @@ import (
 	"math"
 )
 
-/******************************************
- ************** INTERFACE *****************
- ******************************************/
-
 // FloatingFibonacciHeap is an implementation of a fibonacci heap
 // with only floating-point priorities and no user data attached.
 type FloatingFibonacciHeap struct {
@@ -143,8 +139,7 @@ func (heap *FloatingFibonacciHeap) Size() uint {
 	return heap.size
 }
 
-// DequeueMin removes and returns the
-// minimal element in the heap
+// DequeueMin removes and returns the minimal element in the heap
 func (heap *FloatingFibonacciHeap) DequeueMin() (*Entry, error) {
 	if heap.IsEmpty() {
 		return nil, EmptyHeapError("Cannot dequeue minimum of empty heap")
